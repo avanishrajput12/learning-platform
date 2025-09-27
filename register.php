@@ -22,7 +22,7 @@
     .container {
       background:linear-gradient(135deg, #cdee0fff, #764ba2);
       padding: 25px 30px;
-      border-radius: 10px;
+      border-radius: 30px;
       box-shadow: 0 8px 20px rgba(247, 13, 24, 0.93);
       width: 100%;
       max-width: 500px;
@@ -64,7 +64,7 @@
     input[type="password"] {
       padding: 10px;
       border: 1px solid #d1d5db;
-      border-radius: 5px;
+      border-radius: 35px;
       font-size: 15px;
     }
 

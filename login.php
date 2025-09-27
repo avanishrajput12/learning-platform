@@ -16,7 +16,7 @@
       background:linear-gradient(135deg, #d63be4ff, #832addff);
       width: 350px;
       margin: 100px auto;
-      border-radius: 10px;
+      border-radius: 40px;
       padding: 30px 25px;
       text-align: center;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -57,7 +57,7 @@
       margin: 10px 0;
       border: none;
       background-color: #dcdcdc;
-      border-radius: 5px;
+      border-radius: 40px;
       font-size: 14px;
     }
 
