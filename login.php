@@ -8,12 +8,12 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #f7d659; /* Yellow background */
+      background-color: #cecabeff; /* Yellow background */
       font-family: 'Segoe UI', sans-serif;
     }
 
     .login-box {
-      background-color: #eb4a4aff;
+      background:linear-gradient(135deg, #d63be4ff, #832addff);
       width: 350px;
       margin: 100px auto;
       border-radius: 10px;
