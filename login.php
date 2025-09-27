@@ -3,193 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LearnX - Register</title>
+  <title>User Login - LearnX</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
+      padding: 0;
+      background-color: #f7d659; /* Yellow background */
       font-family: 'Segoe UI', sans-serif;
-      background: #f3f4f6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-      min-height: 100vh;
     }
 
-    .container {
-      background:linear-gradient(135deg, #cdee0fff, #764ba2);
-      padding: 25px 30px;
+    .login-box {
+      background-color: #eb4a4aff;
+      width: 350px;
+      margin: 100px auto;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(247, 13, 24, 0.93);
-      width: 100%;
-      max-width: 500px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
-    .container:hover{
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    .login-box:hover{
+        box-shadow: 0 12px 30px rgba(31, 83, 226, 0.94);
         transform: translateY(-5px);
         transition: all 0.3s ease;
-
     }
 
-    h2 {
-      text-align: center;
-      color: #1f2937;
-      margin-bottom: 20px;
-    }
-
-    form {
+    .login-box .avatar {
+      width: 80px;
+      height: 80px;
+      background-color: #60e3f5ff; 
+      border-radius: 50%;
+      margin: -70px auto 10px;
       display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      font-weight: 500;
-      color: #374151;
-      margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"],
-    input[type="password"] {
-      padding: 10px;
-      border: 1px solid #d1d5db;
-      border-radius: 5px;
-      font-size: 15px;
-    }
-
-    .gender-options {
-      display: flex;
-      gap: 15px;
       align-items: center;
+      justify-content: center;
     }
 
-    .gender-options label {
-      font-weight: normal;
-      color: #374151;
+    .login-box .avatar img {
+      width: 40px;
+      height: 40px;
     }
 
-    .toggle-password {
-      font-size: 14px;
-      color: #6b7280;
-      cursor: pointer;
-      user-select: none;
-      margin-top: 5px;
-      align-self: flex-end;
+    .login-box h2 {
+      margin: 20px 0;
+      color: #333;
+      font-size: 20px;
     }
 
-    button {
-      background-color: #3b82f6;
-      color: white;
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 100%;
       padding: 12px;
+      margin: 10px 0;
+      border: none;
+      background-color: #dcdcdc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .login-box input::placeholder {
+      color: #777;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 10px 0;
+      font-size: 14px;
+      color: #333;
+    }
+
+    .remember-me input {
+      margin-right: 8px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #27ae60;
+      color: white;
       border: none;
       border-radius: 5px;
+      font-weight: bold;
       font-size: 16px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-top: 10px;
+      transition: background 0.3s ease;
     }
 
-    button:hover {
-      background-color: #2563eb;
+    .login-box button:hover {
+      background-color: #219150;
     }
 
-    @media screen and (max-width: 480px) {
-      .container {
+    @media (max-width: 400px) {
+      .login-box {
+        width: 90%;
         padding: 20px;
       }
 
-      form {
-        gap: 12px;
-      }
-
-      input,
-      button {
-        font-size: 14px;
-      }
-
-      .toggle-password {
-        font-size: 13px;
+      .login-box h2 {
+        font-size: 18px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Register on LearnX</h2>
+  <div class="login-box">
+    <div class="avatar">
+      <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" alt="User Icon" />
+    </div>
+    <h2>User Login</h2>
     <form action="#" method="post">
-      <div class="form-group">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="fname" required />
+      <input type="text" name="username" placeholder="User Name" required />
+      <input type="password" name="password" placeholder="Password" required />
+      
+      <div class="remember-me">
+        <input type="checkbox" id="remember" name="remember" />
+        <label for="remember">Remember Me</label>
       </div>
 
-      <div class="form-group">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lname" required />
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="e.g. 9876543210" />
-      </div>
-
-      <div class="form-group">
-        <label for="dob">Date of Birth</label>
-        <input type="date" id="dob" name="dob" required />
-      </div>
-
-      <div class="form-group">
-        <label>Gender</label>
-        <div class="gender-options">
-          <input type="radio" id="male" name="gender" value="male" required />
-          <label for="male">Male</label>
-
-          <input type="radio" id="female" name="gender" value="female" />
-          <label for="female">Female</label>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required />
-        <span class="toggle-password" onclick="togglePassword('password', this)">Show Password</span>
-      </div>
-
-      <div class="form-group">
-        <label for="repassword">Confirm Password</label>
-        <input type="password" id="repassword" name="repassword" required />
-        <span class="toggle-password" onclick="togglePassword('repassword', this)">Show Password</span>
-      </div>
-
-      <button type="submit">Register</button>
+      <button type="submit">Login</button>
     </form>
   </div>
-
-  <script>
-    function togglePassword(id, toggleElement) {
-      const input = document.getElementById(id);
-      if (input.type === "password") {
-        input.type = "text";
-        toggleElement.textContent = "Hide Password";
-      } else {
-        input.type = "password";
-        toggleElement.textContent = "Show Password";
-      }
-    }
-  </script>
 </body>
 </html>
