@@ -20,12 +20,18 @@
     }
 
     .container {
-      background: #fff;
+      background:linear-gradient(135deg, #cdee0fff, #764ba2);
       padding: 25px 30px;
       border-radius: 10px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(247, 13, 24, 0.93);
       width: 100%;
       max-width: 500px;
+    }
+    .container:hover{
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+
     }
 
     h2 {
