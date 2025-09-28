@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -123,6 +124,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h2>Register on LearnX</h2>
@@ -184,7 +186,7 @@
       const input = document.getElementById(id);
       if (input.type === "password") {
         input.type = "text";
-        toggleElement.textContent = "Hide Password";
+        toggleElement.keyup= "Hide Password";
       } else {
         input.type = "password";
         toggleElement.textContent = "Show Password";
@@ -192,4 +194,36 @@
     }
   </script>
 </body>
+
 </html>
+
+<?php
+include "config.php";
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $fname=$_POST['fname'];
+    $lname=$_POST['lname'];
+    $email=$_POST['email'];
+    $phone=$_POST['phone'];
+    $dob=$_POST['dob'];
+    $gender=$_REQUEST['gender'];
+    
+    $password=$_POST['password'];
+    $repassword=$_POST['repassword'];
+
+    if($password==$repassword){
+        $hash=password_hash($password,PASSWORD_DEFAULT);
+        $user_id=rand(11111,999999);
+        $sql="INSERT INTO `users` (`user_id`,`fname`, `lname`, `email`, `phone`, `dob`, `gender`, `password`) VALUES ('$user_id','$fname', '$lname', '$email', '$phone', '$dob', '$gender', '$hash')";
+        $result=mysqli_query($conn,$sql);
+        if($result){
+            echo "<script>alert('Registration Successful! You can now login.');</script>";
+        }
+        else{
+            echo "<script>alert('Error: ".mysqli_error($conn)."');</script>";
+        }
+    }
+    else{
+        echo "<script>alert('Passwords do not match. Please try again.');</script>";
+    }
+  
+}
