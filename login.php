@@ -132,6 +132,7 @@ session_start();
       </div>
 
       <input type="submit" name="login" value="Login">
+      <a href="forgetpass.php">Forget Password</a>
     </form>
   </div>
 </body>
