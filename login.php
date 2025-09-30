@@ -37,7 +37,7 @@ session_start();
     .login-box .avatar {
       width: 80px;
       height: 80px;
-      background-color: #0f698dff; 
+      background-color: #eff5f7ff; 
       border-radius: 50%;
       margin: -70px auto 10px;
       display: flex;
@@ -119,7 +119,7 @@ session_start();
 <body>
   <div class="login-box">
     <div class="avatar">
-      <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" alt="User Icon" />
+      <img src="https://cdn-icons-png.flaticon.com/128/5264/5264565.png" alt="User Icon" />
     </div>
     <h2>User Login</h2>
     <form action="#" method="post">
