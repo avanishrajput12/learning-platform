@@ -41,10 +41,11 @@
 if(isset($_REQUEST['sbt'])){
     session_start();
     include 'config.php';
-    $newpass=$_REQUEST['newpass'];
+    $password=$_REQUEST['newpass'];
     $confrimnewpass=$_REQUEST['confrimnewpass'];
-    if($newpass==$confrimnewpass){
-        $query="UPDATE users SET password='$newpass' WHERE email='$_SESSION[email]' ";
+    if($password==$confrimnewpass){
+      $hash=password_hash($password,PASSWORD_DEFAULT);
+        $query="UPDATE users SET password='$password' WHERE email='$_SESSION[email]' ";
         $result=mysqli_query($conn,$query);
         if($result){
             echo "<script>alert('Password Reset Successfully'); window.location='login.php';</script>";
