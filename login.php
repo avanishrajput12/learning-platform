@@ -13,17 +13,17 @@
     }
 
     .login-box {
-      background:linear-gradient(135deg, #d63be4ff, #832addff);
+      background: linear-gradient(135deg, #2c3e50, #ecf0f1);
       width: 350px;
       margin: 100px auto;
       border-radius: 40px;
       padding: 30px 25px;
       text-align: center;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 8px 16px rgba(243, 240, 240, 0.2);
       position: relative;
     }
     .login-box:hover{
-        box-shadow: 0 12px 30px rgba(31, 83, 226, 0.94);
+        box-shadow: 0 12px 30px rgba(199, 205, 221, 0.94);
         transform: translateY(-5px);
         transition: all 0.3s ease;
     }
@@ -31,7 +31,7 @@
     .login-box .avatar {
       width: 80px;
       height: 80px;
-      background-color: #60e3f5ff; 
+      background-color: #0f698dff; 
       border-radius: 50%;
       margin: -70px auto 10px;
       display: flex;
@@ -62,7 +62,7 @@
     }
 
     .login-box input::placeholder {
-      color: #777;
+      color: #777777ff;
       text-transform: uppercase;
       font-weight: 600;
     }
