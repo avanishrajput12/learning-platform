@@ -1,3 +1,9 @@
+<?php
+include "config.php";
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,7 +86,7 @@
       margin-right: 8px;
     }
 
-    .login-box button {
+    .login-box input[type="submit"]{
       width: 100%;
       padding: 12px;
       background-color: #27ae60;
@@ -94,8 +100,8 @@
       transition: background 0.3s ease;
     }
 
-    .login-box button:hover {
-      background-color: #219150;
+    .login-box input[type="submit"]:hover {
+      background-color: #289ee2ff;
     }
 
     @media (max-width: 400px) {
@@ -125,8 +131,42 @@
         <label for="remember">Remember Me</label>
       </div>
 
-      <button type="submit">Login</button>
+      <input type="submit" name="login" value="Login">
     </form>
   </div>
 </body>
 </html>
+
+<?php
+
+if(isset($_REQUEST['login'])){
+  $username=$_REQUEST['username'];
+  $password=$_REQUEST['password'];
+
+  $stmt = $conn->prepare("SELECT user_id,fname,lname, password FROM users WHERE user_id = ?");
+    $stmt->bind_param("i", $username);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    if ($row) {
+        if ($password==$row['password']) {
+            $_SESSION['fname'] = $row['fname'];
+            $_SESSION['lname'] = $row['lname'];
+            $_SESSION['user_id'] = $row['user_id'];
+
+    
+            header("location:userdash.php");
+            exit();
+
+        } else {
+            echo "<script>alert('Invalid Password')</script>";
+        }
+    } else {
+        echo "<script>alert('Invalid Username or User ID')</script>";
+    }
+
+    $stmt->close();
+
+
+}

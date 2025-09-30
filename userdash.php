@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -177,11 +180,12 @@
     <a href="#">Dashboard</a>
     <a href="#">Course Progress</a>
     <a href="#">Profile</a>
+    <a href="logout.php">Logout</a>
 </div>
 
 <div class="main-area">
     <div class="topbar">
-        <h1>User Dashboard</h1>
+        <h1>Dear, <?php echo $_SESSION['fname'];?></h1>
         <div class="user-info">
             <span class="material-icons bell">notifications</span>
        <img src="student.jpg" alt="Profile Photo" 
