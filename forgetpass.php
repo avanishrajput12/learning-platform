@@ -25,6 +25,11 @@ body {
   max-width: 380px;
   text-align: center;
 }
+.container:hover{
+    box-shadow: 0px 8px 25px hsla(0, 86%, 51%, 0.84);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
 
 .login-heading {
   font-size: 24px;
