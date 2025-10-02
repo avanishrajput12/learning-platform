@@ -5,40 +5,96 @@
   <title>Email Verification with OTP</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #491082a7;
-    }
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #bdc3c7, #2c3e50);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    .container {
-      width: 400px;
-      margin: 100px auto;
-      padding: 20px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      text-align: center;
-      background: skyblue;
-    }
+.container {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
 
-    .hidden {
-      display: none;
-    }
+.login-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  position: relative;
+}
 
-    input, button {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-    }
+.login-heading::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #3498db;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
 
-    #response {
-      margin-top: 10px;
-      color: red;
-    }
+form input,
+#otp-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+form input:focus,
+#otp-box input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.4);
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #3498db;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+.hidden {
+  display: none;
+}
+
+#response {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #27ae60;
+}
   </style>
 </head>
 <body>
   <div class="container">
-    <h3>Verify Email</h3>
+ <h3 class="login-heading">Verify Email</h3>
     <form id="verify-form">
       <input type="email" name="email" placeholder="Email" required>
       <input type="text" name="user_id" placeholder="Enter user Id" required>
