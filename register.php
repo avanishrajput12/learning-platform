@@ -65,7 +65,7 @@
     input[type="password"] {
       padding: 10px;
       border: 1px solid #d1d5db;
-      border-radius: 35px;
+      border-radius: 40px;
       font-size: 15px;
     }
 
