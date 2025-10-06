@@ -188,7 +188,7 @@ session_start();
         <h1>Dear, <?php echo $_SESSION['fname'];?></h1>
         <div class="user-info">
             <span class="material-icons bell">notifications</span>
-       <img src=".Assets/student.jpg" alt="Profile Photo" 
+       <img src="Assests/student.jpg" alt="Profile Photo" 
      style="width:40px; height:40px; border-radius:50%; object-fit:cover;">
 
 
